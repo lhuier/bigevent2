@@ -14,7 +14,52 @@
 </head>
 
 <body>
-
+    <div class="layui-main">
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="">
+        </div>
+    </div>
+    <div class="loginbox">
+        <div class="title">
+        </div>
+        <div class="login">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+            </form>
+            <a href="javascript:">现在去注册</a>
+        </div>
+        <div class="reglog">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请再次输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+            </form>
+            <a href="javascript:">返回登录</a>
+        </div>
+    </div>
 </body>
 
 </html>
