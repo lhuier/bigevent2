@@ -26,9 +26,11 @@ $(function () {
     $('#formInfo').submit(function (e) {
         e.preventDefault()
         $.post('/my/userinfo', $(this).serialize(), function (res) {
+            console.log(res);
             if (res.status === 0) {
                 console.log(window.parent)
                 window.parent.getUserInfo()
+                
             }
         })
     })
