@@ -60,11 +60,38 @@ $(function () {
 
     $('#formPub').submit(function (e) {
         e.preventDefault()
+
+
         var fd = new FormData($(this)[0])
         fd.append('state', state)
-        console.log(fd);
-        fd.forEach(function (a, b) {
-            console.log(b, a);
-        })
+
+        $image
+            .cropper('getCroppedCanvas', {
+                // 创建一个 Canvas 画布
+                width: 400,
+                height: 280,
+            })
+            .toBlob(function (blob) {
+                fd.append('cover_img', blob)
+                console.log(fd);
+                fd.forEach(function (a, b) {
+                    console.log(b, a);
+                })
+
+                $.ajax({
+                    method: 'POST',
+                    url: '/my/article/add',
+                    data: fd,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status === 0) {
+                            window.location.href = '/子页面/文lie.html'
+                        }
+                    },
+                })
+            })
+
+  
     })
 })
